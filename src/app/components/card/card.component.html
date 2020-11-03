@@ -1,0 +1,27 @@
+<p>card works!</p>
+
+<div class="body">
+    <div #container class="container" (mousemove)='onMouseMove($event)' (mouseenter)='mouseenter()'
+        (mouseleave)='mouseleave()'>
+        <div #card class="card">
+            <div class="sneaker">
+                <div #circle class="circle"></div>
+                <img #sneaker src="../../assets/Apple_.png" alt="apple">
+            </div>
+            <div  class="info">
+                <div>
+                <h1 #title class="title">APPLE </h1>
+                <h3 #info >There are more than 7,500 known cultivars of apples. Cultivars vary in their yield and the ultimate size of the tree, even when grown on the same rootstock</h3>
+                <div #sizes class="sizes">
+                    <button>Pink Lady'</button>
+                    <!-- <button>Jonagold</button> -->
+                    <button class="active">Granny Smith</button>
+                    <button>'McIntosh'</button>
+                </div>
+                <div  class="purchase">
+                    <button #purchase>SELECT</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
