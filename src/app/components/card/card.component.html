@@ -4,24 +4,28 @@
     <div #container class="container" (mousemove)='onMouseMove($event)' (mouseenter)='mouseenter()'
         (mouseleave)='mouseleave()'>
         <div #card class="card">
-            <div class="sneaker">
+            <div class="PopoImg">
                 <div #circle class="circle"></div>
-                <img #sneaker src="../../assets/Apple_.png" alt="apple">
+                <img #PopoImg src="../../assets/Apple_.png" alt="apple">
             </div>
-            <div  class="info">
+            <div class="info">
                 <div>
-                <h1 #title class="title">APPLE </h1>
-                <h3 #info >There are more than 7,500 known cultivars of apples. Cultivars vary in their yield and the ultimate size of the tree, even when grown on the same rootstock</h3>
-                <div #sizes class="sizes">
-                    <button>Pink Lady'</button>
-                    <!-- <button>Jonagold</button> -->
-                    <button class="active">Granny Smith</button>
-                    <button>'McIntosh'</button>
-                </div>
-                <div  class="purchase">
-                    <button #purchase>SELECT</button>
+                    <h1 #title class="title">APPLE {{num}}</h1>
+                    <h3 #info>There are more than 7,500 known cultivars of apples. Cultivars vary in their yield and the
+                        ultimate size of the tree, even when grown on the same rootstock</h3>
+                    <div #sizes class="sizes">
+                        <button class="button" [ngClass]="{'active': selectedItem === 1}"
+                            (click)='selectedItem = 1;'>Pink Lady'</button>
+                        <!-- <button class="button">Jonagold</button> -->
+                        <button class="button" [ngClass]="{'active': selectedItem === 2}"
+                            (click)='selectedItem = 2;'>Granny Smith</button>
+                        <button class="button" [ngClass]="{'active': selectedItem === 3}"
+                            (click)='selectedItem = 3;'>'McIntosh'</button>
+                    </div>
+                    <div class="purchase">
+                        <button #purchase>SELECT</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>

@@ -31,13 +31,13 @@
 
   }
   
-  .sneaker {
+  .PopoImg {
     min-height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  .sneaker img {
+  .PopoImg img {
     width: 20rem;
     z-index: 2;
     transition: all 0.75s ease-out;
@@ -70,11 +70,12 @@
     transition: all 0.75s ease-out;
   }
   .sizes {
+    padding-top: 3rem;
     display: flex;
     justify-content: space-between;
     transition: all 0.75s ease-out;
   }
-  .sizes button {
+  .button {
     padding: 0.5rem 2rem;
     background: none;
     border: none;
@@ -84,10 +85,16 @@
     font-weight: bold;
     color: #585858;
   }
-
-  .active {
+  .button:hover {
     background: #585858;
     color: white;
+    /* outline:none; */
+  }
+
+   .active {
+    outline:none;
+    background:red;
+    color:blue
   }
   .purchase {
     margin-top: 5rem;
@@ -102,5 +109,11 @@
     cursor: pointer;
     border-radius: 30px;
     font-weight: bolder;
+    outline:none;
   }
+  .purchase button:hover  {
+    background:yellow;
+    color:black
+  }
+
   

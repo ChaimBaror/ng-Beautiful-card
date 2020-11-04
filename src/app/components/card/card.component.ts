@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit, Renderer2, Input } from '@angular/core';
 
 
 @Component({
@@ -12,13 +12,15 @@ export class CardComponent implements AfterViewInit {
   }
 
   constructor(private renderer: Renderer2) { }
-
+  
+  @Input() num: number;
+  selectedItem = 0;
   //Movement Animation to happen
   @ViewChild('card') card: ElementRef;
   // //Items
   @ViewChild('title') title: ElementRef;
 
-  @ViewChild('sneaker') sneaker: ElementRef;
+  @ViewChild('PopoImg') PopoImg: ElementRef;
 
   @ViewChild('purchase') purchase: ElementRef;
 
@@ -48,7 +50,7 @@ export class CardComponent implements AfterViewInit {
 
     //Popout
     this.renderer.setStyle(this.title.nativeElement, 'transform', `translateZ(150px)`)
-    this.renderer.setStyle(this.sneaker.nativeElement, 'transform', `translateZ(200px) rotateZ(-45deg)`)
+    this.renderer.setStyle(this.PopoImg.nativeElement, 'transform', `translateZ(200px) rotateZ(-45deg)`)
     this.renderer.setStyle(this.description.nativeElement, 'transform', `translateZ(125px)`)
     this.renderer.setStyle(this.sizes.nativeElement, 'transform', `translateZ(100px)`)
     this.renderer.setStyle(this.purchase.nativeElement, 'transform', `translateZ(75px)`)
@@ -60,7 +62,7 @@ export class CardComponent implements AfterViewInit {
 
     //Popback
     this.renderer.setStyle(this.title.nativeElement, 'transform', `translateZ(0px)`)
-    this.renderer.setStyle(this.sneaker.nativeElement, 'transform', `translateZ(0px) rotateZ(0deg)`)
+    this.renderer.setStyle(this.PopoImg.nativeElement, 'transform', `translateZ(0px) rotateZ(0deg)`)
     this.renderer.setStyle(this.description.nativeElement, 'transform', `translateZ(0px)`)
     this.renderer.setStyle(this.sizes.nativeElement, 'transform', `translateZ(0px)`)
     this.renderer.setStyle(this.purchase.nativeElement, 'transform', `translateZ(0px)`)
